@@ -5,7 +5,7 @@ const sheetdb_url = "https://sheetdb.io/api/v1/0w727pzl4snes"
 const score_url = "https://sheetdb.io/api/v1/jtrde044df8p9"
 
 //GET BIBLE VERSES (ex: https://getbible.net/json?passage=Jn3:16&version=ls1910)
-const verseApi_url = "https://getbible.net/json?version=ls1910&passage=ls1910"
+// const verseApi_url = "https://getbible.net/json?version=ls1910&passage=ls1910"
 
 
 // EXCEL FORMULE for all oparions to make the add Data interactif with updating of scores
@@ -117,36 +117,38 @@ function clearQuestion(msg=''){
   }
 
   var tableau_code = [
-    {code:'A01',book : 'GENESE', chapiter : '1', verse : '1', url_ref : 'gen1:1'},
-    {code:'A02',book : 'GENESE', chapiter : '1', verse : '2', url_ref : 'gen1:2'},
-    {code:'A03',book : 'GENESE', chapiter : '1', verse : '3', url_ref : 'gen1:3'},
-    {code:'A04',book : 'HEBREUX', chapiter : '11', verse : '1', url_ref : 'heb11:1'},
-    {code:'A05',book : 'JEAN', chapiter : '3', verse : '16', url_ref : 'jn3:16'},
-    {code:'A06',book : 'JOSUE', chapiter : '1', verse : '8', url_ref : 'jos1:8'},
-    {code:'A07',book : 'MATTHIEU', chapiter : '28', verse : '19', url_ref : 'mat28:19'},
-    {code:'A08',book : 'PSAUMES', chapiter : '23', verse : '1', url_ref : 'ps23:1'},
-    {code:'A09',book : 'PSAUMES', chapiter : '37', verse : '4', url_ref : 'ps37:4'},
-    {code:'A10',book : 'PSAUMES', chapiter : '1', verse : '1', url_ref : 'ps1:1'},
+    {code:'A01',book : 'GENESE', chapiter : '1', verse : '1'},
+    {code:'A02',book : 'GENESE', chapiter : '1', verse : '2'},
+    {code:'A03',book : 'GENESE', chapiter : '1', verse : '3'},
+    {code:'A04',book : 'HEBREUX', chapiter : '11', verse : '1'},
+    {code:'A05',book : 'JEAN', chapiter : '3', verse : '16'},
+    {code:'A06',book : 'JOSUE', chapiter : '1', verse : '8'},
+    {code:'A07',book : 'MATTHIEU', chapiter : '28', verse : '19'},
+    {code:'A08',book : 'PSAUMES', chapiter : '23', verse : '1'},
+    {code:'A09',book : 'PSAUMES', chapiter : '37', verse : '4'},
+    {code:'A10',book : 'PSAUMES', chapiter : '1', verse : '1'},
 
-    {code:'B01',book : '2 CORINTHIENS', chapiter : '5', verse : '17', url_ref : '2cor5:17'},
-    {code:'B02',book : 'GALATES', chapiter : '5', verse : '22', url_ref : 'gal5:22'},
-    {code:'B03',book : '1 CORINTHIENS', chapiter : '13', verse : '13', url_ref : '1cor13:13'},
-    {code:'B04',book : '1 TIMOTHEE', chapiter : '1', verse : '7', url_ref : '1tim1:7'},
-    {code:'B05',book : '1 TIMOTHEE', chapiter : '4', verse : '12', url_ref : '1tim4:12'},
-    {code:'B06',book : 'ACTES', chapiter : '1', verse : '8', url_ref : 'act1:8'},
-    {code:'B07',book : 'EXODE', chapiter : '20', verse : '12', url_ref : 'ex20:12'},
-    {code:'B08',book : 'JEAN', chapiter : '14', verse : '6', url_ref : 'jn14:6'},
-    {code:'B09',book : 'JEREMIE', chapiter : '29', verse : '11', url_ref : 'jer29:11'},
-    {code:'B10',book : 'JEREMIE', chapiter : '33', verse : '3', url_ref : 'jer33:3'},
+    {code:'B01',book : '2 CORINTHIENS', chapiter : '5', verse : '17'},
+    {code:'B02',book : 'GALATES', chapiter : '5', verse : '22'},
+    {code:'B03',book : '1 CORINTHIENS', chapiter : '13', verse : '13'},
+    {code:'B04',book : '1 TIMOTHEE', chapiter : '1', verse : '7'},
+    {code:'B05',book : '1 TIMOTHEE', chapiter : '4', verse : '12'},
+    {code:'B06',book : 'ACTES', chapiter : '1', verse : '8'},
+    {code:'B07',book : 'EXODE', chapiter : '20', verse : '12'},
+    {code:'B08',book : 'JEAN', chapiter : '14', verse : '6'},
+    {code:'B09',book : 'JEREMIE', chapiter : '29', verse : '11'},
+    {code:'B10',book : 'JEREMIE', chapiter : '33', verse : '3'},
 
-    {code:'C01',book : 'ESAÏE', chapiter : '53', verse : '5', url_ref : 'esa53:5'},
-    {code:'C02',book : 'GENESE', chapiter : '2', verse : '18', url_ref : 'gen2:18'},
-    {code:'C03',book : 'PROVERBES', chapiter : '18', verse : '22', url_ref : 'pro18:22'},
-    {code:'C04',book : 'PSAUMES', chapiter : '119', verse : '105', url_ref : 'ps119:105'},
-    {code:'C05',book : '2 CHRONIQUES', chapiter : '7', verse : '14', url_ref : '2chr7:14'},
-    {code:'C06',book : 'GENESE', chapiter : '50', verse : '20', url_ref : 'gen50:20'},
-    {code:'C07',book : 'JOËL', chapiter : '2', verse : '28', url_ref : 'joe2:28'},
-    {code:'C08',book : 'MATTHIEU', chapiter : '5', verse : '13', url_ref : 'mat5:13'},
-    {code:'C09',book : 'MATTHIEU', chapiter : '5', verse : '14', url_ref : 'mat5:14'},
-    {code:'C10',book : 'ROMAINS', chapiter : '10', verse : '17', url_ref : 'rom10:17'},
-  ]
+    {code:'C01',book : 'ESAÏE', chapiter : '53', verse : '5'},
+    {code:'C02',book : 'GENESE', chapiter : '2', verse : '18'},
+    {code:'C03',book : 'PROVERBES', chapiter : '18', verse : '22'},
+    {code:'C04',book : 'PSAUMES', chapiter : '119', verse : '105'},
+    {code:'C05',book : '2 CHRONIQUES', chapiter : '7', verse : '14'},
+    {code:'C06',book : 'GENESE', chapiter : '50', verse : '20'},
+    {code:'C07',book : 'JOËL', chapiter : '2', verse : '28'},
+    {code:'C08',book : 'MATTHIEU', chapiter : '5', verse : '13'},
+    {code:'C09',book : 'MATTHIEU', chapiter : '5', verse : '14'},
+    {code:'C10',book : 'ROMAINS', chapiter : '10', verse : '17'},
+  ],
+allBooks = bible_books_AT.concat(bible_books_NT),
+bookCode = (book) => { return allBooks.indexOf(book) }

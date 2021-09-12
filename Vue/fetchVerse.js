@@ -1,22 +1,18 @@
 
 function setQuestion(code){
     let verseOfCode = tableau_code.find(element => element.code === code)
-    // console.log(verseOfCode)
+    verseOfCode.index = bookCode(verseOfCode.book)
+    verseOfCode.chapiter = parseInt(verseOfCode.chapiter)
+    verseOfCode.verse = parseInt(verseOfCode.verse)
+    console.log(verseOfCode);
     clearQuestion('<img src="./vendor/animate/Ellipsis.gif" height="150em"/>')
-    jQuery.ajax({
-        url:'http://getbible.net/json',
-        dataType: 'jsonp',
-        data: `version=ls1910&text=${verseOfCode.url_ref}`,
-        jsonp: 'getbible',
-        success:function(json){
-            let verse_txt = json.book[0].chapter[`${verseOfCode.verse}`].verse
-            clearQuestion(verse_txt)
-            true_answered = verseOfCode.book + '' +verseOfCode.chapiter +':'+verseOfCode.verse
-            pauseTimer();
-            document.getElementById('codeQuestion').setAttribute('disabled','')
-            document.getElementById('validationBTN').removeAttribute('hidden','')
-            document.getElementById('btn-msg').setAttribute('hidden','')
-            console.log(true_answered)
-        }
-    });
+    let verse_txt = fr_apee[verseOfCode.index].chapters[(verseOfCode.chapiter-1)][(verseOfCode.verse-1)]
+    // console.log(verse_txt); return
+    clearQuestion(verse_txt)
+    true_answered = verseOfCode.book + '' +verseOfCode.chapiter +':'+verseOfCode.verse
+    pauseTimer();
+    document.getElementById('codeQuestion').setAttribute('disabled','')
+    document.getElementById('validationBTN').removeAttribute('hidden','')
+    document.getElementById('btn-msg').setAttribute('hidden','')
+    console.log(true_answered)
 }

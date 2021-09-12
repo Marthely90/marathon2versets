@@ -1,7 +1,8 @@
 var team
 const codeQuestion = document.querySelector('#codeQuestion'), book_feild = document.querySelector('#book_feild')
 var Question = document.querySelector('#Question')
-var answeredCode = []
+var answeredCode = [];
+// console.log(fr_apee);
 
 do{team = prompt('Quel est votre EQUIPE ?')}while(!team)
 get_all_scores(team.trim().toUpperCase())
