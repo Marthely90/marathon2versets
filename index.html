@@ -48,7 +48,7 @@
 		  <div class="display-remain-time">00:30</div>
 		  <!-- <button class="play" id="pause"></button> -->
 		</div>
-		<h2>{{name}}</h2>
+		<h2 id="playerName"></h2>
 	  </div>
 	  
 	<div class="limiter">
@@ -56,59 +56,42 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
 				<form class="login100-form validate-form" onsubmit="return false">
 					<span class="login100-form-title p-b-30">
-						<i id="Question">--Version 03.12092021--</i>
-						<input type="hidden" v-model="name" name="name" value="{{name}}">
+						<i id="Question">--Version 04.02102021--</i>
+						<input type="hidden" name="Pname" id="Pname">
 					</span>
 
 					<div class="wrap-input100 validate-input">
-						<select id="codeQuestion" class="form-control" v-model="code" name="code" onchange="/*this.setAttribute('disabled','')*/;setQuestion(this.value)">
-							<option value="">-- CODE QUESTIONS --</option>
-							<optgroup label="GROUPE A.##">
-								<option v-for="q_code in questions_codeA" :value="q_code" >{{q_code}}</option>
-							</optgroup>
-							<optgroup label="GROUPE B.##">
-								<option v-for="q_code in questions_codeB" :value="q_code">{{q_code}}</option>
-							</optgroup>
-							<optgroup label="GROUPE C.##">
-								<option v-for="q_code in questions_codeC" :value="q_code">{{q_code}}</option>
-							</optgroup>
+						<select id="codeQuestion" class="form-control" name="code" onchange="/*this.setAttribute('disabled','')*/;setQuestion(this.value)">
 						</select>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input">
-						<select id="book_feild" class="form-control" v-model="book" name="books" onchange="//if(codeQuestion.value){codeQuestion.setAttribute('disabled','')}">
-							<option id="bookInit" value="">-- LIVRE --</option>
-							<optgroup label="Ancien Testament">
-								<option v-for="book in bible_books_AT" :value="book">{{book}}</option>
-							</optgroup>
-							<optgroup label="Nouveau Testament">
-								<option v-for="book in bible_books_NT" :value="book">{{book}}</option>
-							</optgroup>
+						<select id="book_feild" class="form-control" name="books" onchange="//if(codeQuestion.value){codeQuestion.setAttribute('disabled','')}">
 						</select>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="wrap-input100 rs1 validate-input">
-						<input class="input100" type="number" v-model="chapiter" name="Chapiter" min=1 max=999 placeholder="Chapitre">
+						<input id="chapiter_feild" class="input100" type="number" name="chapiter" placeholder="chapitre"/>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="wrap-input100 rs1 validate-input">
-						<input class="input100" type="number" v-model="verse" name="verse" min=1 max=999 placeholder="verset">
+						<input id="verse_feild" class="input100" type="number" v-model="verse" name="verse" min=1 max=999 placeholder="verset">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn" hidden @click="validate();clearInterval(intervalTimer);" id="validationBTN">
+						<button class="login100-form-btn" hidden onclick="validate();clearInterval(intervalTimer);" id="validationBTN">
 							Valider
 						</button>
 						<a class="login100-form-btn bg-danger" id="btn-msg">
-							Veuillez choisir le code question de votre choix pour voir les questions !
+							Choisissez un autre code !
 						</a>
 					</div>
 

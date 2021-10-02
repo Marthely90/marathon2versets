@@ -152,3 +152,44 @@ function clearQuestion(msg=''){
   ],
 allBooks = bible_books_AT.concat(bible_books_NT),
 bookCode = (book) => { return allBooks.indexOf(book) }
+
+function fill_select_question(list){
+let questListSelect = document.getElementById('codeQuestion');
+let selectText_A = '<optgroup label="GROUPE A.##">';
+let selectText_B = '<optgroup label="GROUPE B.##">';
+let selectText_C = '<optgroup label="GROUPE C.##">';
+let selectText = '<option value="">-- CODE QUESTIONS --</option>';
+    list.forEach(element => {
+        if(element.charAt(0) ==='A'){
+            selectText_A += `<option :value="${element}" >${element}</option>`;
+        }else if(element.charAt(0) ==='B'){
+            selectText_B += `<option :value="${element}" >${element}</option>`;
+        }else if(element.charAt(0) ==='C'){
+            selectText_C += `<option :value="${element}" >${element}</option>`;
+        }
+    });
+    selectText_A +="</optgroup>";
+    selectText_B +="</optgroup>";
+    selectText_C +="</optgroup>";
+    selectText += selectText_A + selectText_B + selectText_C;
+    questListSelect.innerHTML = selectText;
+    // console.log(selectText);
+    // return selectText;
+}
+
+function fill_select_book(){
+    let bookSelect = document.getElementById('book_feild');
+    let selectAT = '<optgroup label="Ancien Testament">';
+    let selectNT= '<optgroup label="Nouveau Testament">';
+    let selectbook = '<option value="">-- LIVRE --</option>';
+    bible_books_AT.forEach(element => {
+        selectAT += `<option :value="${element}" >${element}</option>`;
+        });
+        selectAT +="</optgroup>";
+    bible_books_NT.forEach(element => {
+        selectNT += `<option :value="${element}" >${element}</option>`;
+        });
+        selectNT +="</optgroup>";
+        selectbook += selectAT + selectNT;
+        bookSelect.innerHTML = selectbook;
+}
