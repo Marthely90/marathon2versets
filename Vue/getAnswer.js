@@ -24,6 +24,8 @@ function get_all_scores(connected_user){
             }
         });
         if(userPoints.pts !==0){
+            pointsCumul = userPoints.pts;
+            document.querySelector('#pts_cumule').innerHTML = pointsCumul + ' pts';
             clearQuestion(`Votre dernier Score était : ${userPoints.pts} vous avez répondu à ${userPoints.code.length} question(s). Elles ne figureront plus sur la liste`)
             userPoints.code.forEach(element => {
                 answeredCode.push(element);

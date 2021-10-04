@@ -31,31 +31,31 @@
 </head>
 <body>
 <div id="app">
-	<div class="container">
-		<!-- TIMER CONTAINER -->
-		<div class="circle"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-		  <g transform="translate(110,110)">
-			<circle r="100" class="e-c-base"/>
-			<g transform="rotate(-90)">
-			  <circle r="100" class="e-c-progress"/>
-			  <g id="e-pointer">
-				<circle cx="100" cy="0" r="8" class="e-c-pointer"/>
-			  </g>
-			</g>
-		  </g>
-		  </svg> </div>
-		<div class="controlls">
-		  <div class="display-remain-time">00:30</div>
-		  <!-- <button class="play" id="pause"></button> -->
-		</div>
-		<h2 id="playerName"></h2>
-	  </div>
-	  
-	<div class="limiter">
+ 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+			<div class="wrap-login100 p-l-20 p-r-20 p-t-1 p-b-10">
+				<div class="container p-b-10">
+					<!-- TIMER CONTAINER -->
+					<div class="circle"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+					  <g transform="translate(110,110)">
+						<circle r="100" class="e-c-base"/>
+						<g transform="rotate(-90)">
+						  <circle r="100" class="e-c-progress"/>
+						  <g id="e-pointer">
+							<circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+						  </g>
+						</g>
+					  </g>
+					  </svg> </div>
+					<div class="controlls">
+					  <div class="display-remain-time">00:30</div>
+					  <h2 id="playerName"></h2>
+					  <h3 id="pts_cumule"></h3>
+					  <!-- <button class="play" id="pause"></button> -->
+					</div>
+				  </div>
 				<form class="login100-form validate-form" onsubmit="return false">
-					<span class="login100 p-b-10">
+					<span class="login100 p-b-60">
 						<i id="Question">--Version 04.02102021--</i>
 						<input type="hidden" name="Pname" id="Pname">
 					</span>

@@ -1,7 +1,7 @@
 var team
 const codeQuestion = document.querySelector('#codeQuestion'), book_feild = document.querySelector('#book_feild')
 var Question = document.querySelector('#Question')
-var answeredCode = [];
+var answeredCode = [], pointsCumul = 0;
 
 do{team = prompt('Quel est votre EQUIPE ?')}while(!team)
 document.querySelector('#playerName').innerHTML = team.trim().toUpperCase();
