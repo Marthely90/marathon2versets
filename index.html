@@ -34,8 +34,13 @@
  	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-20 p-r-20 p-t-1 p-b-10">
+				<div>
+					<button class="accordion" id="best_score">Section 1</button>
+					<div class="panel">
+						<p id="scoreList"></p>
+					</div>
+				</div>
 				<div class="container p-b-10">
-					<p id="best_score">...</p>
 					<!-- TIMER CONTAINER -->
 					<div class="circle"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
 					  <g transform="translate(110,110)">
@@ -57,7 +62,7 @@
 				  </div>
 				<form class="login100-form validate-form" onsubmit="return false">
 					<span class="login100 p-b-60">
-						<i id="Question">--Version 04.09102021--</i>
+						<i id="Question">--Version 05.24102021--</i>
 						<input type="hidden" name="Pname" id="Pname">
 					</span>
 					<br/>
@@ -75,16 +80,12 @@
 						<span class="focus-input100-2"></span>
 					</div>
 
-					<div class="wrap-input100 rs1 validate-input">
+					<div class="wrap-input100 rs1 validate-input" id="chapiter_feild_content">
 						<input id="chapiter_feild" class="input100" type="number" name="chapiter" placeholder="chapitre"/>
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
 					</div>
 
-					<div class="wrap-input100 rs1 validate-input">
+					<div class="wrap-input100 rs1 validate-input" id="verse_feild_content">
 						<input id="verse_feild" class="input100" type="number" v-model="verse" name="verse" min=1 max=999 placeholder="verset">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-20">

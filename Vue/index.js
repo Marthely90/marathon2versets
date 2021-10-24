@@ -32,47 +32,14 @@ function validate(){
     answeredCode.push(selectValue.code);
     document.querySelector("#codeQuestion").removeAttribute('disabled');
     question_all_code = filterQuestion(question_all_code,answeredCode);
-    clearQuestion(`REPONSE (${selectValue.code}) ENVOYEE !<br/>${selectValue.book} ${selectValue.chapiter}:${selectValue.verse}<br/>La bonne réponse était :<br/>${true_answered}`);
+    // clearQuestion(`REPONSE (${selectValue.code}) ENVOYEE !<br/>${selectValue.book} ${selectValue.chapiter}:${selectValue.verse}<br/>La bonne réponse était :<br/>${true_answered}`);
+    clearQuestion(`La bonne réponse était :<br/>${true_answered}`);
     fill_select_question(question_all_code);
     fill_select_book();
 
-    document.getElementById('chapiter_feild').placeholder='chapitre';
-    document.getElementById('verse_feild').placeholder='verset';
+    document.getElementById('chapiter_feild_content').innerHTML = '<input id="chapiter_feild" class="input100" type="number" name="chapiter" placeholder="chapitre"/>';
+    document.getElementById('verse_feild_content').innerHTML='<input id="verse_feild" class="input100" type="number" v-model="verse" name="verse" min=1 max=999 placeholder="verset">';
     
     document.getElementById('validationBTN').setAttribute('hidden','');
     document.getElementById('btn-msg').removeAttribute('hidden','');
 }
-
-
-// const app = new Vue({
-//     el: '#app',
-//     data() {
-//       return {
-//         code:'',
-//         book:'',
-//         chapiter:'',
-//         verse:'',
-//         name:team.trim().toUpperCase()
-//       }
-//     },
-//       methods: {
-//         validate: function (){
-//           this.book = !this.book ? "AUCUNE": this.book
-//           this.chapiter = !this.chapiter ? 0 : this.chapiter
-//           this.verse = !this.verse ? 0 : this.verse
-//           addAnswer(this.code.trim().toUpperCase(), this.name, this.book, this.chapiter, this.verse)
-//           answeredCode.push(this.code)
-//           document.querySelector("#codeQuestion").removeAttribute('disabled')
-//           // questions_codeA = filterQuestion(questions_codeA,answeredCode)
-//           // questions_codeB = filterQuestion(questions_codeB,answeredCode)
-//           // questions_codeC = filterQuestion(questions_codeC,answeredCode)
-//           clearQuestion(`REPONSE (${this.code}) ENVOYEE !<br/>${this.book} ${this.chapiter}:${this.verse}<br/>La bonne réponse était :<br/>${true_answered}`)
-//           this.code=''
-//           this.book=''
-//           this.chapiter=''
-//           this.verse=''
-//           document.getElementById('validationBTN').setAttribute('hidden','')
-//           document.getElementById('btn-msg').removeAttribute('hidden','')
-//         }
-//     }
-//   })

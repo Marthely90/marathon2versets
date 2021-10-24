@@ -1,8 +1,8 @@
 //URL of the steelsheet connection API
-const sheetdb_url = "https://sheetdb.io/api/v1/0w727pzl4snes"
+const sheetdb_url = "https://sheetdb.io/api/v1/10qfg4we1q767"
 
 //URL of the steelsheet connection API
-const score_url = "https://sheetdb.io/api/v1/jtrde044df8p9"
+const score_url = "https://sheetdb.io/api/v1/chhmk4zehhlwq"
 
 //GET BIBLE VERSES (ex: https://getbible.net/json?passage=Jn3:16&version=ls1910)
 // const verseApi_url = "https://getbible.net/json?version=ls1910&passage=ls1910"
@@ -192,4 +192,17 @@ function fill_select_book(){
         selectNT +="</optgroup>";
         selectbook += selectAT + selectNT;
         bookSelect.innerHTML = selectbook;
+}
+
+var template_tableScore = (list) =>{
+    let tableScore = '<table style="width:100%">'
+    list.forEach(element => {
+        tableScore += `
+        <tr>
+            <td>${element.name}</td>
+            <td>${element.score}Pts</td>
+        </tr>
+        `;
+    });
+    return tableScore += '</table>';
 }

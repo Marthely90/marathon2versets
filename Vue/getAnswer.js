@@ -48,7 +48,14 @@ function get_all_scores(connected_user){
                     bestPlayer.name = element.name;
                 }
         });
-        document.querySelector('#best_score').innerHTML = `Le Meilleur score est de <b>${bestPlayer.score}pts</b><br/> Il est détenue par <i>${bestPlayer.name}.</i>`;
+
+        //SORT SCORES
+        listScore.sort(function (a, b) {
+            return b.score - a.score;
+          });
+
+        document.querySelector('#best_score').innerHTML = `Le Meilleur score est de <b>${bestPlayer.score}pts</b> Il est détenue par <i>${bestPlayer.name}.</i>`;
+        document.querySelector('#scoreList').innerHTML = template_tableScore(listScore);
         console.log(listScore);
         
         if(userPoints.pts !==0){
