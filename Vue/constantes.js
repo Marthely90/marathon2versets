@@ -1,8 +1,10 @@
 //URL of the steelsheet connection API
-const sheetdb_url = "https://sheetdb.io/api/v1/10qfg4we1q767"
+// const sheetdb_url = "https://sheetdb.io/api/v1/10qfg4we1q767" //PROD
+const sheetdb_url = "https://sheetdb.io/api/v1/jtrde044df8p9" //TEST
 
 //URL of the steelsheet connection API
-const score_url = "https://sheetdb.io/api/v1/chhmk4zehhlwq"
+// const score_url = "https://sheetdb.io/api/v1/jtrde044df8p9" //PROD
+const score_url = "https://sheetdb.io/api/v1/0w727pzl4snes" //TEST
 
 //GET BIBLE VERSES (ex: https://getbible.net/json?passage=Jn3:16&version=ls1910)
 // const verseApi_url = "https://getbible.net/json?version=ls1910&passage=ls1910"
